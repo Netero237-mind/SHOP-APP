@@ -1,0 +1,46 @@
+.header {
+    background-color: green;
+    display: flex;
+    height: 100px;
+
+   
+}
+.header img { 
+    width: 12px;
+    margin-left: 10px;
+    height: 100%;
+}
+.logo {
+    flex:1;
+    font-size: 30px;
+    color:yellow;
+    margin:auto
+
+}
+
+.nav-links {
+    flex:2;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+.nav-links a {
+    margin: 0;
+    font-weight: bold;
+    flex: 1;
+    font-size: 20px;
+    text-decoration: none;
+}
+@media (max-width: 540px) { 
+.header { 
+flex-direction: column; 
+} 
+} 
+@media (max-width: 350px) { 
+.nav-links a { 
+font-size: 14px;
+} 
+} 
