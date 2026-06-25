@@ -9,5 +9,30 @@
         <a href="#">Blog</a>
         <a href="#">Contact</a>
     </nav>
+    <!-- Bouton hamburger (mobile uniquement) -->
+  <button
+    class="burger"
+    [class.burger--open]="isMenuOpen()"
+    (click)="toggleMenu()"
+    aria-label="Ouvrir le menu"
+    [attr.aria-expanded]="isMenuOpen()"
+  >
+    <span class="burger__bar"></span>
+    <span class="burger__bar"></span>
+    <span class="burger__bar"></span>
+  </button>
 
 </div>
+
+<!-- Menu mobile vertical -->
+<nav class="mobile-nav" [class.mobile-nav--open]="isMenuOpen()">
+  <a href="#" (click)="closeMenu()">Home</a>
+  <a href="#" (click)="closeMenu()">Products</a>
+  <a href="#" (click)="closeMenu()">Blog</a>
+  <a href="#" (click)="closeMenu()">Contact</a>
+</nav>
+
+<!-- Overlay -->
+@if (isMenuOpen()) {
+  <div class="overlay" (click)="closeMenu()"></div>
+}

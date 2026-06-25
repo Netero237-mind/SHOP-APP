@@ -27,6 +27,92 @@
     gap: 20px;
     text-align: center;
 }
+.burger {
+  display: none;          /* caché sur desktop */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 48px;
+  height: 48px;
+  padding: 11px;
+  margin-right: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid yellow;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.burger__bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: yellow;
+  border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+/* Animation → croix quand ouvert */
+.burger--open .burger__bar:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.burger--open .burger__bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.burger--open .burger__bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: green;
+  border-top: 2px solid rgba(255, 255, 0, 0.3);
+  position: absolute;
+  top: 100px;          /* colle sous le header */
+  left: 0;
+  right: 0;
+  z-index: 99;
+  /* slide-down animé */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+}
+.mobile-nav--open {
+  max-height: 300px;
+  opacity: 1;
+}
+.mobile-nav a {
+  padding: 16px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.mobile-nav a:hover {
+  background-color: rgba(255, 255, 0, 0.1);
+  border-left-color: yellow;
+  color: yellow;
+}
+
+/* ── OVERLAY ─────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  top: 100px;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 98;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+
 .nav-links a {
     margin: 0;
     font-weight: bold;
@@ -34,13 +120,35 @@
     font-size: 20px;
     text-decoration: none;
 }
-@media (max-width: 540px) { 
-.header { 
-flex-direction: column; 
-} 
-} 
-@media (max-width: 350px) { 
-.nav-links a { 
-font-size: 14px;
-} 
-} 
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+
+/* Mobile ≤ 425px : affiche hamburger, cache nav desktop */
+@media (max-width: 425px) {
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+}
+
+/* Tablette 426px–768px : même comportement */
+@media (min-width: 426px) and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+}
+
+/* Petit mobile ≤ 350px */
+@media (max-width: 350px) {
+  .nav-links a {
+    font-size: 14px;
+  }
+  .mobile-nav a {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+}

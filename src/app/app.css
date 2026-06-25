@@ -7,3 +7,8 @@
   flex: 1;
  border: 10px solid #fdd835;
 }
+@media(max-width:375px) {
+  .app-container{
+    width: auto;
+  }
+}
