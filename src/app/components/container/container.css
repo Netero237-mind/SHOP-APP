@@ -19,11 +19,16 @@
   margin-bottom: 20px;
   margin-top: 5px;
 }
-@media (max-width: 500px) { 
+@media (max-width: 715px) { 
 .container { 
-flex-direction: column; 
-
+flex-direction: column;
 } 
+app-productlist {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
 } 
 @media (max-width: 350px) {
     .container{

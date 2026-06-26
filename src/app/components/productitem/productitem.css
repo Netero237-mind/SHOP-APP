@@ -1,23 +1,24 @@
 .product-image {
     height: 100%;
-    width: 100%; 
-    margin-right: 50px;
-    
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .product-image img {
     height: 20em;
     border-radius: 10px;
-    margin-right: 50px;
-    margin-left: 80px;
-    align-items: center;
+    display: block;
+    margin: 0 auto;
     width: 200px;
     object-fit: cover;
 }
 .product-item {
-    display: flex;
     background-color: #adadad;
-    padding: 10px;
+    padding-top: 10px;
     align-items: center;
     justify-content: space-between;
     border-radius: 10px;
@@ -34,20 +35,17 @@
 }
 .product-item p {
    margin:0 ;
-    font-size: 15px;
-    margin-left: 0;
-    margin-right: 30px;
+    font-size: 13px;
     color: white;
     background: #007bff;
     display: block;
     border-radius: 5px;
-    width: 300px;
+    width: 250px;
     align-items: center;
     text-align: center;
 }
 .btn-panier{
     display: flex;
-    margin-left: 87px;
     justify-content: center;
     align-items: center;
     color: white;
@@ -58,6 +56,7 @@
     background-color: #28a745;
     border: none;
     border-radius: 5px;
+    justify-content: center;
     cursor: pointer;
 }
 .product-price {
@@ -71,24 +70,37 @@
     
 }
 
-@media (max-width:500px) {
+@media (max-width:715px) {
     .product-item {
-        align-items:center;
-        justify-content:center;
-        text-align:center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 20px auto;
+    }
+
+    .product-image {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-item p {
+        margin: 0 auto;
+        width: 220px;
     }
 }
+
 @media (max-width:619px) {
    .product-item p{
-    margin-left: 50px;
-    margin-right: 20px;
     align-items: center;
     flex-direction: column;
-    font-size: 15px;
+    display: block;
     margin-right: 0;
-
    }
    .product-image button{
-    margin-left: 130px;
+    margin: 0;
    }
 }
