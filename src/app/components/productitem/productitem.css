@@ -39,6 +39,7 @@
     color: white;
     background: #007bff;
     display: block;
+    padding: 10px;
     border-radius: 5px;
     width: 250px;
     align-items: center;

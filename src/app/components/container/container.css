@@ -19,7 +19,7 @@
   margin-bottom: 20px;
   margin-top: 5px;
 }
-@media (max-width: 715px) { 
+@media (max-width: 718px) { 
 .container { 
 flex-direction: column;
 } 

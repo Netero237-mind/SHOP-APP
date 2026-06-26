@@ -9,8 +9,5 @@ import { Productlist } from "../productlist/productlist";
   styleUrl: './container.css',
 })
 export class Container {
-  product = signal({ 
-  name: 'Robe pour femme', 
-  price: 12.99 
-}); 
+
 }
