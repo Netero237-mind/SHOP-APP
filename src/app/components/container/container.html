@@ -1,11 +1,18 @@
 <div class="container">
-  <h1>My App</h1>
+  <h1>My App <div class="time">
+  <p>{{ currentDate() | date:'medium' }}</p> 
+<!-- Résultat : Jun 22, 2026, 2:30:45 PM --> 
+  </div></h1>
+  
   <p>Welcome to my app!</p>
   <div class="product-list">
   
-    <app-productlist>
+    <app-productlist (favoriteAdded)="onFavoriteAdded($event)" >
         
     </app-productlist>
    
+  </div>
+  <div class="modal-product-view">
+    <app-modal-product-view></app-modal-product-view>
   </div>
 </div>

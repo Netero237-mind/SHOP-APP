@@ -1,9 +1,9 @@
 <div class="product-item">
     <a href="#">
-       <div class="product-image">
-         <img [src]="product.image" [alt]="product.name">
-         <h3>{{ product.name }}</h3>
-         <p>{{ product.description }} <span class="product-price">{{ product.price }} FCFA</span></p>
+       <div class="product-image" (click)="onProductClick()">
+         <img [src]="product()?.image" [alt]="product()?.name">
+         <h3>{{ product()?.name }}</h3>
+         <p>{{ product()?.description }} <span class="product-price">{{ product()?.price }} FCFA</span></p>
          <button class="btn-panier" > Ajouter au panier</button>
        </div>
     </a>

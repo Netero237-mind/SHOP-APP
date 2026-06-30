@@ -10,6 +10,12 @@
   background-color: pink;
   box-sizing: border-box;
 }
+.time {
+  background-color: beige;
+}
+.time p{
+  color: rgb(235, 162, 25);
+}
 .container h1 {
   font-size: 24px;
   margin: 0;
